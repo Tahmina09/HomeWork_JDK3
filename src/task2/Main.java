@@ -5,19 +5,20 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<Integer> first = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-        ArrayList<Integer> second = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
-
-        System.out.println(compareArrays(first, second));
+        
     }
 
-    public static <T> boolean compareArrays(ArrayList<T> one, ArrayList<T> two) {
-        if (one.size() != two.size()) {
+    public static <T> boolean compareArrays(T[] array1, T[] array2) {
+        if (array1.length != array2.length) {
             throw new RuntimeException("Массивы не равны.");
-        } else if (one.equals(two)){
-            return true;
-        } else {
-            return false;
         }
+
+        for (int i = 0; i < array1.length; i++) {
+            if (!array1[i].equals(array2[i])) {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
