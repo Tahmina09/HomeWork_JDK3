@@ -1,19 +1,24 @@
 package task3;
 
 public class Pair<T, U> {
+    private T first;
+    private U second;
 
-    public T getFirst(T first, U second) {
+    public Pair(T first, U second) {
+        this.first = first;
+        this.second = second;
+    }
+
+    public T getFirst() {
         return first;
     }
 
-    public U getSecond(T first, U second) {
+    public U getSecond() {
         return second;
     }
 
-    public String toString(T first, U second) {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(first + " ");
-        stringBuilder.append(second);
-        return stringBuilder.toString();
+    @Override
+    public String toString() {
+        return "(" + first + second + ")";
     }
 }
